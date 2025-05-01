@@ -8,7 +8,7 @@ public class InventarioServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InventarioServiceApplication.class, args);
-		System.out.println("Prueba");
+		
 	}
 
 }
