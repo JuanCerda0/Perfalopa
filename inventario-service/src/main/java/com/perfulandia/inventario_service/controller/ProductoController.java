@@ -5,39 +5,38 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-import com.perfulandia.inventario_service.Perfume;
-import com.perfulandia.inventario_service.service.Perfume_Service;
+import com.perfulandia.inventario_service.model.Producto;
+import com.perfulandia.inventario_service.service.Producto_Service;
 
 
 @RestController
 @RequestMapping("/inventario")
-public class PerfumesController {
+public class ProductoController {
 
 	@Autowired
-	private Perfume_Service servicio;
+	private Producto_Service servicio;
 	
 	@PostMapping
-	public Perfume crear(@RequestBody Perfume perfume) {
+	public Producto crear(@RequestBody Producto producto) {
 		
-		return servicio.crear(perfume);
+		return servicio.crear(producto);
 	}
 	
 	@GetMapping
-	public List<Perfume> listarTodos() {
+	public List<Producto> listarTodos() {
 		return servicio.obtenerTodos();
 	}
 	
 	@GetMapping("/{id}")
-	public Perfume obtenerPorId(@PathVariable Long id) {
+	public Producto obtenerPorId(@PathVariable Long id) {
 		
 		return servicio.obtenerPorId(id);
 	}
 	
 	@PutMapping("/{id}")
-	public Perfume actualizar(@PathVariable Long id, @RequestBody Perfume perfume) {
+	public Producto actualizar(@PathVariable Long id, @RequestBody Producto producto) {
 		
-		return servicio.actualizar(id, perfume);
+		return servicio.actualizar(id, producto);
 	}
 	
 	@DeleteMapping("/{id}")
