@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ACA DEBES ASEGURARTE QUE VAYA EL NOMBRE DE LA BD QUE CREASTE
+    username: ACA VA TU USUARIO DE POSTGRESQL
+    password: ACA VA TU CLAVE DE POSTGRESQL
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8081
