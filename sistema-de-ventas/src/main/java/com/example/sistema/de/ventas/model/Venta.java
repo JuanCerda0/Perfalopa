@@ -1,0 +1,33 @@
+package com.example.sistema.de.ventas.model;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Entity
+@Table(name = "ventas")
+@Getter
+@Setter
+public class Venta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long clienteId;
+
+    private LocalDateTime fecha;
+
+    private Double total;
+
+    private String tipoVenta;
+
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<DetalleVenta> detalles;
+
+    @OneToOne(mappedBy = "venta", cascade = CascadeType.ALL)
+    private Factura factura;
+}
