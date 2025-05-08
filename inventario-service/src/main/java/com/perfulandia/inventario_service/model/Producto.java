@@ -1,5 +1,6 @@
 package com.perfulandia.inventario_service.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Producto {
 	private int precio_producto;
 	
 	private String proveedor_producto;
-	private String sucursal_producto;
+	private String sucursal;
 	
 	// Constructor vacio
 	
@@ -35,14 +36,14 @@ public class Producto {
 	}
 	
 	public Producto(Long id_producto, String nombre_producto, int cantidad_producto, int precio_producto,
-			String proveedor_producto, String sucursal_producto) {
+			String proveedor_producto, String sucursal) {
 		super();
 		this.id_producto = id_producto;
 		this.nombre_producto = nombre_producto;
 		this.cantidad_producto = cantidad_producto;
 		this.precio_producto = precio_producto;
 		this.proveedor_producto = proveedor_producto;
-		this.sucursal_producto = sucursal_producto;
+		this.sucursal = sucursal;
 	}
 
 	// Getters y Setters
@@ -87,12 +88,12 @@ public class Producto {
 		this.proveedor_producto = proveedor_producto;
 	}
 
-	public String getSucursal_producto() {
-		return sucursal_producto;
+	public String getsucursal() {
+		return sucursal;
 	}
 
-	public void setSucursal_producto(String sucursal_producto) {
-		this.sucursal_producto = sucursal_producto;
+	public void setsucursal(String sucursal) {
+		this.sucursal = sucursal;
 	}
 	
 	
