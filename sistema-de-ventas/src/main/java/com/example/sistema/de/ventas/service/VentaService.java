@@ -1,7 +1,18 @@
 package com.example.sistema.de.ventas.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
+
 import com.example.sistema.de.ventas.dto.DevolucionRequestDTO;
 import com.example.sistema.de.ventas.dto.VentaRequestDTO;
+import com.example.sistema.de.ventas.feing.ClienteServiceClient;
+import com.example.sistema.de.ventas.feing.InventarioServiceClient;
 import com.example.sistema.de.ventas.model.DetalleVenta;
 import com.example.sistema.de.ventas.model.Devolucion;
 import com.example.sistema.de.ventas.model.Factura;
@@ -10,17 +21,18 @@ import com.example.sistema.de.ventas.repository.DetalleVentaRepository;
 import com.example.sistema.de.ventas.repository.DevolucionRepository;
 import com.example.sistema.de.ventas.repository.FacturaRepository;
 import com.example.sistema.de.ventas.repository.VentaRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.RestTemplate;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class VentaService {
 
+	@Autowired
+	private InventarioServiceClient inventarioClient;
+	
+	@Autowired
+	private ClienteServiceClient clienteClient;
+	
+	
+	
     private final VentaRepository ventaRepository;
     private final DetalleVentaRepository detalleVentaRepository;
     private final FacturaRepository facturaRepository;

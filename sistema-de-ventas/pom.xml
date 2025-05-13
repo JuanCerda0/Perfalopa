@@ -55,6 +55,16 @@
     		<groupId>org.springframework.cloud</groupId>
     		<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+        <dependency>
+        	<groupId>com.perfumelandia</groupId>
+        	<artifactId>cliente-service</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.perfulandia</groupId>
+        	<artifactId>inventario-service</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
