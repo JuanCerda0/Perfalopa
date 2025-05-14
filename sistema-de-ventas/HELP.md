@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.example.sistema de ventas' is invalid and this project uses 'com.example.sistema.de.ventas' instead.
+* The original package name 'com.ventas.sistema-de-ventas' is invalid and this project uses 'com.ventas.sistema_de_ventas' instead.
 
 # Getting Started
 

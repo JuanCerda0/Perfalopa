@@ -1,0 +1,7 @@
+com\ventas\modelo\DetalleVenta.class
+com\ventas\modelo\Venta.class
+com\ventas\repositorio\VentaRepositorio.class
+com\ventas\servicio\VentaServicio$ProductoDTO.class
+com\ventas\VentasApplication.class
+com\ventas\servicio\VentaServicio.class
+com\ventas\controlador\VentaControlador.class
