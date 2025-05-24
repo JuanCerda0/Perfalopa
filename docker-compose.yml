@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      POSTGRES_DB: servicios
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: esmiacc123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  cliente:
+    build:
+      context: ./sistema-de-cliente
+      dockerfile: Dockerfile
+    container_name: cliente_container
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+
+  inventario:
+    build:
+      context: ./sistema-de-inventario
+      dockerfile: Dockerfile
+    container_name: inventario_container
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres
+
+  ventas:
+    build:
+      context: ./sistema-de-ventas
+      dockerfile: Dockerfile
+    container_name: ventas_container
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+      - cliente
+      - inventario
+
+volumes:
+  postgres_data:
