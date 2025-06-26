@@ -15,6 +15,15 @@ public class Producto {
     private int stock;
     private double precio;
 
+    public Producto() {}
+
+    public Producto(Long id, String nombre, int stock, double precio) {
+    this.id = id;
+    this.nombre = nombre;
+    this.stock = stock;
+    this.precio = precio;
+}
+
     // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

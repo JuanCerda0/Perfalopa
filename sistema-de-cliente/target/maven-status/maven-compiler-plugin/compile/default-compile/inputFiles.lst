@@ -1,5 +1,5 @@
-C:\Users\jorda\Downloads\s\sistema-de-cliente\src\main\java\com\ejemplo\cliente\ClienteApplication.java
-C:\Users\jorda\Downloads\s\sistema-de-cliente\src\main\java\com\ejemplo\cliente\controlador\ClienteControlador.java
-C:\Users\jorda\Downloads\s\sistema-de-cliente\src\main\java\com\ejemplo\cliente\modelo\Cliente.java
-C:\Users\jorda\Downloads\s\sistema-de-cliente\src\main\java\com\ejemplo\cliente\repositorio\ClienteRepositorio.java
-C:\Users\jorda\Downloads\s\sistema-de-cliente\src\main\java\com\ejemplo\cliente\servicio\ClienteServicio.java
+/app/src/main/java/com/ejemplo/cliente/ClienteApplication.java
+/app/src/main/java/com/ejemplo/cliente/controlador/ClienteControlador.java
+/app/src/main/java/com/ejemplo/cliente/modelo/Cliente.java
+/app/src/main/java/com/ejemplo/cliente/repositorio/ClienteRepositorio.java
+/app/src/main/java/com/ejemplo/cliente/servicio/ClienteServicio.java

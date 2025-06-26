@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.administracion</groupId>
-    <artifactId>sistema-de-administracion</artifactId>
+    <groupId>com.ejemplo.cliente</groupId>
+    <artifactId>sistema-de-cliente</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sistema-de-administracion</name>
-    <description>Microservicio de administración</description>
+    <name>sistema-de-cliente</name>
+    <description>Microservicio de cliente</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -43,6 +43,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- Mockito para pruebas unitarias -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.12.0</version>
+            <scope>test</scope>
+        </dependency>
+          <!-- Documentacion con swagger -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
         </dependency>
     </dependencies>
 
