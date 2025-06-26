@@ -11,6 +11,14 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  maven:
+    image: maven:3.9.9-eclipse-temurin-17
+    container_name: maven_container
+    working_dir: /app
+    volumes:
+      - ./sistema-de-cliente:/app
+    command: mvn clean package
+
   cliente:
     build:
       context: ./sistema-de-cliente
@@ -42,6 +50,35 @@ services:
       - postgres
       - cliente
       - inventario
+
+  logistica:
+    build:
+      context: ./sistema-de-logistica
+      dockerfile: Dockerfile
+    container_name: logistica_container
+    ports:
+      - "8084:8084"
+    depends_on:
+      - postgres
+
+  administracion:
+    build:
+      context: ./sistema-de-administracion
+      dockerfile: Dockerfile
+    container_name: administracion_container
+    ports:
+      - "8085:8085"
+    depends_on:
+      - postgres
+
+  web:
+    build:
+      context: ./sistema-de-web
+      dockerfile: Dockerfile
+    container_name: web_container
+    ports:
+      - "8086:8086"
+    depends_on: []
 
 volumes:
   postgres_data:
