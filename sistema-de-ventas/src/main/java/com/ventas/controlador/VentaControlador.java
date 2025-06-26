@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -77,16 +78,20 @@ public class VentaControlador {
         }
     )
     @GetMapping("/{id}")
-    public Venta obtenerPorId(
+    public ResponseEntity<Venta> obtenerPorId(
         @Parameter(description = "ID de la venta a buscar", required = true)
         @PathVariable Long id
     ) {
-        return ventaServicio.obtenerPorId(id);
+        Venta venta = ventaServicio.obtenerPorId(id);
+        if (venta == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(venta);
     }
 
     @Operation(
-        summary = "Eliminar una venta",
-        description = "Elimina una venta por su ID.",
+        summary = "Eliminar venta por ID",
+        description = "Elimina una venta según su ID.",
         responses = {
             @ApiResponse(
                 responseCode = "204",
@@ -99,10 +104,15 @@ public class VentaControlador {
         }
     )
     @DeleteMapping("/{id}")
-    public void eliminarPorId(
+    public ResponseEntity<Void> eliminarPorId(
         @Parameter(description = "ID de la venta a eliminar", required = true)
         @PathVariable Long id
     ) {
+        Venta venta = ventaServicio.obtenerPorId(id);
+        if (venta == null) {
+            return ResponseEntity.notFound().build();
+        }
         ventaServicio.eliminarPorId(id);
+        return ResponseEntity.noContent().build();
     }
 }
