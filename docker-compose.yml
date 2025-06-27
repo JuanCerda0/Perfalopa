@@ -11,14 +11,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  maven:
-    image: maven:3.9.9-eclipse-temurin-17
-    container_name: maven_container
-    working_dir: /app
-    volumes:
-      - ./sistema-de-cliente:/app
-    command: mvn clean package
-
   cliente:
     build:
       context: ./sistema-de-cliente
