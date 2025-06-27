@@ -1,6 +1,8 @@
+com\ventas\CorsConfig.class
 com\ventas\modelo\DetalleVenta.class
 com\ventas\modelo\Venta.class
 com\ventas\repositorio\VentaRepositorio.class
+com\ventas\CorsConfig$1.class
 com\ventas\servicio\VentaServicio$ProductoDTO.class
 com\ventas\VentasApplication.class
 com\ventas\servicio\VentaServicio.class

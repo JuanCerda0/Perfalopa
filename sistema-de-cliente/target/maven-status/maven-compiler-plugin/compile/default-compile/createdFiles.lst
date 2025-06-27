@@ -1,5 +1,7 @@
 com\ejemplo\cliente\ClienteApplication.class
-com\ejemplo\cliente\controlador\ClienteControlador.class
+com\ejemplo\cliente\CorsConfig$1.class
 com\ejemplo\cliente\servicio\ClienteServicio.class
 com\ejemplo\cliente\modelo\Cliente.class
+com\ejemplo\cliente\controlador\ClienteControlador.class
+com\ejemplo\cliente\CorsConfig.class
 com\ejemplo\cliente\repositorio\ClienteRepositorio.class
