@@ -136,4 +136,24 @@ public class ClienteControlador {
     ) {
         clienteServicio.eliminarCliente(id);
     }
+
+    @Operation(
+        summary = "Login de cliente",
+        description = "Permite a un cliente iniciar sesión con correo y contraseña.",
+        responses = {
+            @ApiResponse(
+                responseCode = "200",
+                description = "Login exitoso",
+                content = @Content(schema = @Schema(implementation = Cliente.class))
+            ),
+            @ApiResponse(
+                responseCode = "401",
+                description = "Credenciales inválidas"
+            )
+        }
+    )
+    @PostMapping("/login")
+    public Cliente login(@RequestBody Cliente datosLogin) {
+        return clienteServicio.login(datosLogin.getCorreo(), datosLogin.getContrasena());
+    }
 }

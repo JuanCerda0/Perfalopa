@@ -14,6 +14,7 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String direccion;
+    private String contrasena;
 
     // Getters y setters
     public Long getId() { return id; }
@@ -27,4 +28,7 @@ public class Cliente {
 
     public String getDireccion() { return direccion; }
     public void setDireccion(String direccion) { this.direccion = direccion; }
+
+    public String getContrasena() { return contrasena; }
+    public void setContrasena(String contrasena) { this.contrasena = contrasena; }
 }

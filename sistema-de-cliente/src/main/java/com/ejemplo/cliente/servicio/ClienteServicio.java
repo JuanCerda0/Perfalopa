@@ -32,4 +32,8 @@ public class ClienteServicio {
     public void eliminarCliente(Long id) {
         clienteRepositorio.deleteById(id);
     }
+
+    public Cliente login(String correo, String contrasena) {
+        return clienteRepositorio.findByCorreoAndContrasena(correo, contrasena);
+    }
 }

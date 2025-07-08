@@ -13,7 +13,8 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080")
+                        .allowedOrigins("http://localhost:8080", "http://localhost:53488", "http://localhost:5500", "http://127.0.0.1:5500", "http://127.0.0.1:53488", "http://localhost:4200", "http://localhost:3000", "http://127.0.0.1:8080", "http://127.0.0.1:8082", "http://localhost")
+                        .allowedOriginPatterns("http://localhost:*", "http://127.0.0.1:*")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
             }
         };
